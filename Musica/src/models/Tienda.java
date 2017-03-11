@@ -193,7 +193,7 @@ public class Tienda {
 			System.out.println("¿Qué desea hacer?");
 			opcion = leerInt();
 
-		} while (opcion < 1 || opcion > 3);
+		} while (opcion < 1 || opcion > 2);
 		return opcion;
 	}
 
@@ -213,7 +213,7 @@ public class Tienda {
 					System.out.println("Casi consigue darle a un instrumento existente, no desespere");
 					existe = false;
 				} else {
-					System.out.println("Estupenda eleccion");
+					System.out.println("Estupenda elección");
 					existe = true;
 				}
 			} while (!existe);
