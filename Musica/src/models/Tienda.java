@@ -20,6 +20,7 @@ public class Tienda {
 		System.out.println("Bienvenido a esta su tienda [" + this.nombre + "]");
 		int opcion;
 		do {
+
 			System.out.println();
 			System.out.println("******MENU PRINCIPAL******");
 			System.out.println("1.Ventas totales");
@@ -61,6 +62,7 @@ public class Tienda {
 
 	private void aniadirInstrumento() {
 
+		@SuppressWarnings("resource")
 		Scanner entrada = new Scanner(System.in);
 		String marca, modelo, color;
 		float precio;
@@ -184,12 +186,12 @@ public class Tienda {
 	private int menuProbar() {
 		int opcion;
 		do {
-		System.out.println("/** SUBMENU - PROBAR INSTRUMENTO **/");
-		System.out.println("1. Tocar");
-		System.out.println("2. Afinar");
+			System.out.println("/** SUBMENU - PROBAR INSTRUMENTO **/");
+			System.out.println("1. Tocar");
+			System.out.println("2. Afinar");
 
-		System.out.println("¿Qué desea hacer?");
-		opcion = leerInt();
+			System.out.println("¿Qué desea hacer?");
+			opcion = leerInt();
 
 		} while (opcion < 1 || opcion > 3);
 		return opcion;
@@ -247,6 +249,7 @@ public class Tienda {
 
 	private int leerInt() {
 		boolean esCorrecto = false;
+		@SuppressWarnings("resource")
 		Scanner entrada = new Scanner(System.in);
 		String teclado;
 		int num = 0;
@@ -269,6 +272,7 @@ public class Tienda {
 
 	private float leerFloat() {
 		boolean esCorrecto = false;
+		@SuppressWarnings("resource")
 		Scanner entrada = new Scanner(System.in);
 		String teclado;
 		float num = 0;
@@ -288,5 +292,4 @@ public class Tienda {
 		} while (!esCorrecto);
 		return num;
 	}
-
 }
