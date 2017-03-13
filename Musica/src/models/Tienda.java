@@ -119,7 +119,7 @@ public class Tienda {
 			System.out.println("Cúal desea llevarse trastear?");
 			do {
 				orden = leerInt();
-				if (orden < listaInstrumentos.size()) {
+				if (orden < 1 || orden > listaInstrumentos.size()) {
 					System.out.println("Casi consigue darle a un instrumento existente, no desespere");
 					existe = false;
 				} else {
@@ -140,15 +140,22 @@ public class Tienda {
 				System.out.println("Opcion no contemplada");
 				break;
 			}
-
 		}
 	}
 
 	private void insertarInstrumento(Instrumento i) {
-		if (listaInstrumentos.contains(i)) {
-			System.out.println("El instrumento ya se encuentra en stock");
-		} else {
-			listaInstrumentos.add(i);
+
+		for (Instrumento instrumento : listaInstrumentos) {
+			if (instrumento.toString().equals(i.toString())) {
+				System.out.println("El instrumento ya se encuentra en stock");
+			} else {
+				listaInstrumentos.add(i);
+			}
+		}
+		for (Instrumento instrumento : historialInstrumentosVendidos) {
+			if (instrumento.toString().equals(i.toString())) {
+				System.out.println("El instrumento es de segunda mano, ya se vendió en esta tienda");
+			}
 		}
 	}
 
